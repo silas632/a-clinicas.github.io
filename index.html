@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A+ Clínicas | Psicologia, Fonoaudiologia e Nutrição em São José do Rio Preto</title>
+    <meta name="description" content="Clínica multidisciplinar em São José do Rio Preto especializada em Psicologia, Fonoaudiologia e Nutrição. Atendimento humanizado e personalizado. Agende sua consulta!">
+    <meta name="keywords" content="clínica São José do Rio Preto, psicólogo Rio Preto, fonoaudiólogo, nutricionista, A+ Clínicas">
+    <meta name="author" content="A+ Clínicas">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="A+ Clínicas - Cuidado integral em São José do Rio Preto">
+    <meta property="og:description" content="Psicologia, Fonoaudiologia e Nutrição com atendimento humanizado.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aplus': {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        'deep': {
+                            700: '#1e3a5f',
+                            800: '#152a45',
+                            900: '#0d1b2e',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Poppins', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "A+ Clínicas",
+      "description": "Clínica multidisciplinar de Psicologia, Fonoaudiologia e Nutrição",
+      "telephone": "+551731216685",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Santo Agostinho, 167 - Sala 02",
+        "addressLocality": "São José do Rio Preto",
+        "addressRegion": "SP",
+        "postalCode": "15025-220",
+        "addressCountry": "BR"
+      },
+      "openingHours": "Mo-Fr 07:00-18:30",
+      "medicalSpecialty": ["Psychology", "SpeechPathology", "Nutrition"]
+    }
+    </script>
+
+    <style>
+        * { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        
+        /* Reveal on scroll */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Header scroll */
+        #header { transition: all 0.3s ease; }
+        #header.scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        
+        /* Gradient text */
+        .gradient-text { background: linear-gradient(135deg, #0d9488 0%, #1e3a5f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        
+        /* Hero background overlay */
+        .hero-gradient { background: linear-gradient(135deg, rgba(13,27,46,0.92) 0%, rgba(15,118,110,0.85) 100%); }
+        
+        /* Accordion */
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .accordion-content.open { max-height: 300px; }
+        .accordion-item.open .accordion-icon { transform: rotate(180deg); }
+        .accordion-icon { transition: transform 0.3s ease; }
+        
+        /* Card hover */
+        .service-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .service-card:hover { transform: translateY(-8px); }
+        
+        /* Floating WhatsApp */
+        .whatsapp-float { animation: pulse-slow 3s ease-in-out infinite; }
+        
+        /* Wave divider */
+        .wave-divider { position: relative; }
+        .wave-divider::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; left: 0; right: 0;
+            height: 60px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,50 C360,120 720,0 1080,50 C1260,75 1350,60 1440,50 L1440,100 L0,100 Z'/%3E%3C/svg%3E") no-repeat;
+            background-size: cover;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #0d9488; border-radius: 5px; }
+    </style>
+</head>
+<body class="font-body text-gray-700 antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 py-3 bg-white/95">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-2 group" aria-label="A+ Clínicas - Início">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-aplus-500 to-deep-800 flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-105 transition">
+                    A+
+                </div>
+                <div class="leading-tight">
+                    <p class="font-display font-bold text-deep-800 text-lg">A+ Clínicas</p>
+                    <p class="text-[10px] uppercase tracking-widest text-aplus-600 font-semibold">Saúde Integrada</p>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8" aria-label="Menu principal">
+                <a href="#sobre" class="text-sm font-medium text-gray-700 hover:text-aplus-600 transition">Sobre</a>
+                <a href="#servicos" class="text-sm font-medium text-gray-700 hover:text-aplus-600 transition">Serviços</a>
+                <a href="#processo" class="text-sm font-medium text-gray-700 hover:text-aplus-600 transition">Como funciona</a>
+                <a href="#depoimentos" class="text-sm font-medium text-gray-700 hover:text-aplus-600 transition">Depoimentos</a>
+                <a href="#faq" class="text-sm font-medium text-gray-700 hover:text-aplus-600 transition">FAQ</a>
+                <a href="#contato" class="bg-aplus-600 hover:bg-aplus-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition shadow-lg shadow-aplus-600/30">
+                    Agendar consulta
+                </a>
+            </nav>
+
+            <button id="menu-btn" class="lg:hidden text-2xl text-deep-800 focus:outline-none" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 mt-3">
+            <div class="px-4 py-4 space-y-1">
+                <a href="#sobre" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-aplus-50 hover:text-aplus-700 font-medium">Sobre</a>
+                <a href="#servicos" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-aplus-50 hover:text-aplus-700 font-medium">Serviços</a>
+                <a href="#processo" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-aplus-50 hover:text-aplus-700 font-medium">Como funciona</a>
+                <a href="#depoimentos" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-aplus-50 hover:text-aplus-700 font-medium">Depoimentos</a>
+                <a href="#faq" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-aplus-50 hover:text-aplus-700 font-medium">FAQ</a>
+                <a href="#contato" class="block px-4 py-3 rounded-lg bg-aplus-600 text-white text-center font-semibold mt-2">Agendar consulta</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1920&q=80" 
+                 alt="" class="w-full h-full object-cover" loading="eager">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 reveal">
+                    <span class="w-2 h-2 rounded-full bg-aplus-400 animate-pulse"></span>
+                    Atendimento humanizado em São José do Rio Preto
+                </span>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-[1.1] mb-6 reveal">
+                    Cuidar de você é a nossa <span class="text-aplus-300">prioridade</span>.
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-100/90 mb-10 max-w-2xl reveal leading-relaxed">
+                    Psicologia, Fonoaudiologia e Nutrição em um só lugar. Uma equipe multidisciplinar dedicada ao seu bem-estar integral.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 reveal">
+                    <a href="https://wa.me/5517997513177?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20A%2B%20Cl%C3%ADnicas." 
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-2 bg-aplus-500 hover:bg-aplus-600 text-white font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-aplus-500/30 group">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        Agendar pelo WhatsApp
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition"></i>
+                    </a>
+                    <a href="#servicos" 
+                       class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white font-semibold px-8 py-4 rounded-full transition">
+                        Conhecer serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats flutuantes -->
+        <div class="hidden lg:block absolute bottom-12 right-8 z-10 reveal">
+            <div class="bg-white/95 backdrop-blur rounded-2xl shadow-2xl p-6 w-72 border border-white/40">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="flex -space-x-2">
+                        <div class="w-9 h-9 rounded-full bg-aplus-500 border-2 border-white flex items-center justify-center text-white text-xs font-bold">A</div>
+                        <div class="w-9 h-9 rounded-full bg-deep-700 border-2 border-white flex items-center justify-center text-white text-xs font-bold">B</div>
+                        <div class="w-9 h-9 rounded-full bg-aplus-700 border-2 border-white flex items-center justify-center text-white text-xs font-bold">C</div>
+                    </div>
+                    <div>
+                        <div class="flex text-yellow-400 text-xs">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-xs text-gray-500 font-medium mt-0.5">Avaliação 5.0 no Google</p>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600 italic">"Profissionais atenciosos e ambiente acolhedor."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-20 md:py-28 bg-white relative">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative reveal">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-aplus-100 rounded-3xl -z-10"></div>
+                    <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-deep-700/5 rounded-3xl -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=900&q=80" 
+                         alt="Equipe da A+ Clínicas em atendimento" 
+                         class="rounded-3xl shadow-2xl w-full object-cover h-[500px]" loading="lazy">
+                    
+                    <!-- Badge sobre imagem -->
+                    <div class="absolute bottom-6 left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
+                        <div class="w-12 h-12 bg-aplus-100 rounded-xl flex items-center justify-center text-aplus-600 text-xl">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <div>
+                            <p class="font-display font-bold text-deep-800 text-lg leading-none">+ Cuidado</p>
+                            <p class="text-xs text-gray-500 mt-1">Integral e humanizado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <span class="inline-block text-xs font-bold tracking-widest text-aplus-600 uppercase mb-3">Sobre a clínica</span>
+                    <h2 class="text-3xl md:text-5xl font-display font-bold text-deep-800 mb-6 leading-tight">
+                        Um espaço onde o cuidado é <span class="gradient-text">integral</span>
+                    </h2>
+                    <p class="text-gray-600 mb-5 leading-relaxed">
+                        A <strong class="text-deep-800">A+ Clínicas</strong> nasceu com a missão de oferecer um atendimento multidisciplinar completo em São José do Rio Preto. Aqui, saúde mental, comunicação e nutrição caminham juntas para promover o seu bem-estar.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Nossa equipe é formada por profissionais altamente qualificados, que unem técnica, empatia e escuta ativa para criar planos de cuidado personalizados para cada paciente.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-aplus-100 flex items-center justify-center text-aplus-600 flex-shrink-0">
+                                <i class="fas fa-user-doctor"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-deep-800 text-sm">Equipe especializada</p>
+                                <p class="text-xs text-gray-500">Profissionais qualificados</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-aplus-100 flex items-center justify-center text-aplus-600 flex-shrink-0">
+                                <i class="fas fa-shield-heart"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-deep-800 text-sm">Ambiente seguro</p>
+                                <p class="text-xs text-gray-500">Acolhedor e sigiloso</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-aplus-100 flex items-center justify-center text-aplus-600 flex-shrink-0">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-deep-800 text-sm">Horários flexíveis</p>
+                                <p class="text-xs text-gray-500">Seg a Sex · 07h às 18h30</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-aplus-100 flex items-center justify-center text-aplus-600 flex-shrink-0">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-deep-800 text-sm">Atendimento humanizado</p>
+                                <p class="text-xs text-gray-500">Você em primeiro lugar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contato" class="inline-flex items-center gap-2 text-aplus-600 font-semibold hover:gap-3 transition-all">
+                        Fale com a nossa equipe <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white relative">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center mb-16 reveal">
+                <span class="inline-block text-xs font-bold tracking-widest text-aplus-600 uppercase mb-3">Nossos serviços</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-deep-800 mb-4">
+                    Cuidado especializado para cada necessidade
+                </h2>
+                <p class="text-gray-600">
+                    Três áreas de atuação integradas para atender você e sua família com excelência.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Psicologia -->
+                <article class="service-card reveal bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-aplus-50 rounded-full -mr-20 -mt-20 group-hover:scale-110 transition"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-aplus-500 to-aplus-700 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-aplus-500/30">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-deep-800 mb-3">Psicologia</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Atendimento psicológico para crianças, adolescentes, adultos e famílias. Abordagens personalizadas para ansiedade, depressão, luto e autoconhecimento.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check text-aplus-500 text-xs"></i> Terapia individual</li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check text-aplus-500 text-xs"></i> Terapia infantil</li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check text-aplus-500 text-xs"></i> Terapia de casal</li>
+                        </ul>
+                        <a href="https://wa.me/5517997513177?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20Psicologia." target="_blank" class="inline-flex items-center gap-2 text-aplus-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                            Agendar <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Fonoaudiologia -->
+                <article class="service-card reveal bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-aplus-50 rounded-full -mr-20 -mt-20 group-hover:scale-110 transition"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-aplus-500 to-aplus-700 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-aplus-500/30">
+                            <i class="fas fa-ear-listen"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-deep-800 mb-3">Fonoaudiologia</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Avaliação e terapia para distúrbios da fala, linguagem, audição e voz. Atendimento desde a primeira infância até a terceira idade.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check text-aplus-500 text-xs"></i> Terapia de linguagem</li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check text-aplus-500 text-xs"></i> Audiologia</li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check text-aplus-500 text-xs"></i> Motricidade orofacial</li>
+                        </ul>
+                        <a href="https://wa.me/5517997513177?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20Fonoaudiologia." target="_blank" class="inline-flex items-center gap-2 text-aplus-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                            Agendar <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Nutrição -->
+                <article class="service-card reveal bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-aplus-50 rounded-full -mr-20 -mt-20 group-hover:scale-110 transition"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-aplus-500 to-aplus-700 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-aplus-500/30">
+                            <i class="fas fa-apple-whole"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-deep-800 mb-3">Nutrição</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Acompanhamento nutricional personalizado para promover saúde, bem-estar e qualidade de vida com foco em resultados sustentáveis.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check text-aplus-500 text-xs"></i> Emagrecimento saudável</li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check text-aplus-500 text-xs"></i> Nutrição clínica</li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check text-aplus-500 text-xs"></i> Nutrição esportiva</li>
+                        </ul>
+                        <a href="https://wa.me/5517997513177?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20de%20Nutri%C3%A7%C3%A3o." target="_blank" class="inline-flex items-center gap-2 text-aplus-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                            Agendar <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section id="processo" class="py-20 md:py-28 bg-deep-800 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-72 h-72 rounded-full bg-aplus-400 blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-72 h-72 rounded-full bg-aplus-600 blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative">
+            <div class="max-w-2xl mx-auto text-center mb-16 reveal">
+                <span class="inline-block text-xs font-bold tracking-widest text-aplus-300 uppercase mb-3">Como funciona</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">Começar é simples</h2>
+                <p class="text-gray-300">Em três passos você já está cuidando da sua saúde.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Linha de conexão -->
+                <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-aplus-400 via-aplus-500 to-aplus-400"></div>
+
+                <div class="reveal text-center relative">
+                    <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-aplus-500 to-aplus-700 flex items-center justify-center text-3xl font-display font-bold mx-auto mb-6 shadow-2xl relative z-10">
+                        1
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-2">Entre em contato</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Fale conosco pelo WhatsApp ou telefone e conte o que você precisa.</p>
+                </div>
+
+                <div class="reveal text-center relative">
+                    <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-aplus-500 to-aplus-700 flex items-center justify-center text-3xl font-display font-bold mx-auto mb-6 shadow-2xl relative z-10">
+                        2
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-2">Agendamos para você</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Encontramos o melhor dia e horário para sua primeira consulta.</p>
+                </div>
+
+                <div class="reveal text-center relative">
+                    <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-aplus-500 to-aplus-700 flex items-center justify-center text-3xl font-display font-bold mx-auto mb-6 shadow-2xl relative z-10">
+                        3
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-2">Cuide-se</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Seja recebido por um profissional dedicado, pronto para te ouvir.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 reveal">
+                <a href="https://wa.me/5517997513177?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20A%2B%20Cl%C3%ADnicas." target="_blank"
+                   class="inline-flex items-center gap-2 bg-aplus-500 hover:bg-aplus-400 text-white font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-aplus-500/30">
+                    <i class="fab fa-whatsapp text-xl"></i> Começar agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center mb-16 reveal">
+                <span class="inline-block text-xs font-bold tracking-widest text-aplus-600 uppercase mb-3">Depoimentos</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-deep-800 mb-4">
+                    Histórias de quem confia na A+
+                </h2>
+                <p class="text-gray-600">A satisfação dos nossos pacientes é o nosso maior orgulho.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="reveal bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-lg transition">
+                    <div class="flex text-yellow-400 mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6 leading-relaxed">"Ambiente super acolhedor e profissionais extremamente atenciosos. Me senti muito bem recebida desde o primeiro contato."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-full bg-aplus-500 flex items-center justify-center text-white font-bold">MS</div>
+                        <div>
+                            <p class="font-semibold text-deep-800 text-sm">Maria Silva</p>
+                            <p class="text-xs text-gray-500">Paciente de Psicologia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-lg transition">
+                    <div class="flex text-yellow-400 mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6 leading-relaxed">"Meu filho evoluiu muito com a fonoaudióloga. Gratidão pela paciência e carinho com que ele é tratado."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-full bg-deep-700 flex items-center justify-center text-white font-bold">JP</div>
+                        <div>
+                            <p class="font-semibold text-deep-800 text-sm">João Pereira</p>
+                            <p class="text-xs text-gray-500">Pai de paciente</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-lg transition">
+                    <div class="flex text-yellow-400 mb-4 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6 leading-relaxed">"A nutricionista mudou minha relação com a comida. Resultados reais e duradouros. Recomendo de olhos fechados!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-full bg-aplus-700 flex items-center justify-center text-white font-bold">AL</div>
+                        <div>
+                            <p class="font-semibold text-deep-800 text-sm">Ana Lima</p>
+                            <p class="text-xs text-gray-500">Paciente de Nutrição</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 reveal">
+                <a href="https://maps.app.goo.gl/LqjGi3xFGjQ9hmcJ9" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 text-deep-800 font-semibold hover:text-aplus-600 transition">
+                    <i class="fab fa-google text-aplus-500"></i>
+                    Ver todas as avaliações no Google
+                    <i class="fas fa-external-link-alt text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 md:py-28 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block text-xs font-bold tracking-widest text-aplus-600 uppercase mb-3">Dúvidas frequentes</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-deep-800 mb-4">Perguntas frequentes</h2>
+                <p class="text-gray-600">Não encontrou o que procurava? Fale conosco pelo WhatsApp.</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="accordion-item reveal bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+                        <span class="font-display font-semibold text-deep-800 pr-4">Como faço para agendar uma consulta?</span>
+                        <i class="fas fa-chevron-down text-aplus-600 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-600 leading-relaxed">Você pode agendar diretamente pelo WhatsApp (17) 99751-3177, ligando para (17) 3121-6685, ou preenchendo o formulário de contato nesta página. Nossa equipe responderá rapidamente para encontrar o melhor horário para você.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item reveal bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+                        <span class="font-display font-semibold text-deep-800 pr-4">A clínica atende convênios?</span>
+                        <i class="fas fa-chevron-down text-aplus-600 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-600 leading-relaxed">Trabalhamos com atendimento particular e temos valores acessíveis. Para saber sobre reembolso de convênios ou condições especiais, entre em contato pelo WhatsApp que teremos prazer em esclarecer.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item reveal bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+                        <span class="font-display font-semibold text-deep-800 pr-4">Qual a duração das sessões?</span>
+                        <i class="fas fa-chevron-down text-aplus-600 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-600 leading-relaxed">As sessões de psicologia e fonoaudiologia duram em média 50 minutos. As consultas de nutrição têm duração de aproximadamente 60 minutos na primeira avaliação, com retornos mais curtos.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item reveal bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+                        <span class="font-display font-semibold text-deep-800 pr-4">A clínica atende crianças?</span>
+                        <i class="fas fa-chevron-down text-aplus-600 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-600 leading-relaxed">Sim! Atendemos crianças a partir da primeira infância nas áreas de psicologia, fonoaudiologia e nutrição. Nossos profissionais possuem experiência com o público infantil e adaptam o atendimento para cada faixa etária.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item reveal bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+                        <span class="font-display font-semibold text-deep-800 pr-4">Onde a clínica fica localizada?</span>
+                        <i class="fas fa-chevron-down text-aplus-600 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-600 leading-relaxed">Estamos na Rua Santo Agostinho, 167 – Sala 02, Vila Nossa Senhora da Paz, São José do Rio Preto – SP. Local de fácil acesso e próximo a pontos de referência centrais. Confira o mapa abaixo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center mb-16 reveal">
+                <span class="inline-block text-xs font-bold tracking-widest text-aplus-600 uppercase mb-3">Fale conosco</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-deep-800 mb-4">Agende sua consulta</h2>
+                <p class="text-gray-600">Preencha o formulário e enviaremos sua mensagem direto para o nosso WhatsApp.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+                <!-- Info cards -->
+                <div class="lg:col-span-2 space-y-4 reveal">
+                    <a href="https://wa.me/5517997513177" target="_blank" rel="noopener" class="flex items-start gap-4 p-5 bg-gradient-to-br from-aplus-50 to-white border border-aplus-100 rounded-2xl hover:shadow-lg transition group">
+                        <div class="w-12 h-12 rounded-xl bg-aplus-500 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-aplus-600 uppercase tracking-wider">WhatsApp</p>
+                            <p class="font-semibold text-deep-800 mt-1">(17) 99751-3177</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Resposta rápida</p>
+                        </div>
+                    </a>
+
+                    <a href="tel:+551731216685" class="flex items-start gap-4 p-5 bg-white border border-gray-100 rounded-2xl hover:shadow-lg transition group">
+                        <div class="w-12 h-12 rounded-xl bg-deep-700 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-deep-700 uppercase tracking-wider">Telefone</p>
+                            <p class="font-semibold text-deep-800 mt-1">(17) 3121-6685</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Seg a Sex · 07h–18h30</p>
+                        </div>
+                    </a>
+
+                    <div class="flex items-start gap-4 p-5 bg-white border border-gray-100 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-aplus-100 flex items-center justify-center text-aplus-700 flex-shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-aplus-700 uppercase tracking-wider">Endereço</p>
+                            <p class="font-semibold text-deep-800 mt-1 text-sm leading-snug">Rua Santo Agostinho, 167 – Sala 02<br>Vila N. Sra. da Paz</p>
+                            <p class="text-xs text-gray-500 mt-0.5">São José do Rio Preto – SP</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 p-5 bg-white border border-gray-100 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-aplus-100 flex items-center justify-center text-aplus-700 flex-shrink-0">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-aplus-700 uppercase tracking-wider">Horário</p>
+                            <p class="font-semibold text-deep-800 mt-1 text-sm">Segunda a Sexta</p>
+                            <p class="text-xs text-gray-500 mt-0.5">07:00 – 18:30</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário -->
+                <form id="contact-form" class="lg:col-span-3 bg-gray-50 rounded-3xl p-8 border border-gray-100 reveal">
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="nome" class="block text-sm font-semibold text-deep-800 mb-2">Nome completo *</label>
+                            <input type="text" id="nome" required 
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-aplus-500 focus:ring-2 focus:ring-aplus-500/20 outline-none transition bg-white">
+                        </div>
+                        <div>
+                            <label for="telefone" class="block text-sm font-semibold text-deep-800 mb-2">Telefone *</label>
+                            <input type="tel" id="telefone" required placeholder="(17) 99999-9999"
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-aplus-500 focus:ring-2 focus:ring-aplus-500/20 outline-none transition bg-white">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="servico" class="block text-sm font-semibold text-deep-800 mb-2">Serviço de interesse *</label>
+                        <select id="servico" required 
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-aplus-500 focus:ring-2 focus:ring-aplus-500/20 outline-none transition bg-white">
+                            <option value="">Selecione um serviço</option>
+                            <option value="Psicologia">Psicologia</option>
+                            <option value="Fonoaudiologia">Fonoaudiologia</option>
+                            <option value="Nutrição">Nutrição</option>
+                            <option value="Não sei / Outro">Não sei / Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="mensagem" class="block text-sm font-semibold text-deep-800 mb-2">Mensagem</label>
+                        <textarea id="mensagem" rows="4" placeholder="Conte brevemente o que você procura..."
+                                  class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-aplus-500 focus:ring-2 focus:ring-aplus-500/20 outline-none transition bg-white resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" 
+                            class="w-full bg-aplus-600 hover:bg-aplus-700 text-white font-semibold py-4 rounded-xl transition shadow-lg shadow-aplus-600/30 inline-flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        Enviar pelo WhatsApp
+                    </button>
+                    <p class="text-xs text-gray-500 text-center mt-3">
+                        <i class="fas fa-lock text-aplus-500 mr-1"></i> Seus dados são usados apenas para contato.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="relative">
+        <div class="h-[450px] w-full">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.5649068353!2d-49.4352928!3d-20.813395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdad42c5eb00f5%3A0x548b9271d679ba90!2sA%2B%20Clinicas!5e0!3m2!1spt-BR!2sbr!4v1647890123456!5m2!1spt-BR!2sbr" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade" title="Localização A+ Clínicas"></iframe>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 bg-gradient-to-br from-deep-800 to-aplus-800 text-white">
+        <div class="container mx-auto px-4 text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Sua saúde merece atenção especializada</h2>
+            <p class="text-gray-200 max-w-2xl mx-auto mb-8">Dê o primeiro passo hoje mesmo. Estamos prontos para te acolher.</p>
+            <a href="https://wa.me/5517997513177?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20A%2B%20Cl%C3%ADnicas." target="_blank"
+               class="inline-flex items-center gap-2 bg-white text-deep-800 hover:bg-aplus-100 font-bold px-8 py-4 rounded-full transition shadow-2xl">
+                <i class="fab fa-whatsapp text-xl text-aplus-600"></i>
+                Agendar pelo WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-aplus-500 to-deep-800 flex items-center justify-center text-white font-bold">A+</div>
+                        <div>
+                            <p class="font-display font-bold text-white">A+ Clínicas</p>
+                            <p class="text-[10px] uppercase tracking-widest text-aplus-400 font-semibold">Saúde Integrada</p>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed max-w-md">
+                        Clínica multidisciplinar dedicada ao cuidado integral da sua saúde em São José do Rio Preto. Psicologia, Fonoaudiologia e Nutrição em um só lugar.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-4">Navegação</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#sobre" class="hover:text-aplus-400 transition">Sobre nós</a></li>
+                        <li><a href="#servicos" class="hover:text-aplus-400 transition">Serviços</a></li>
+                        <li><a href="#depoimentos" class="hover:text-aplus-400 transition">Depoimentos</a></li>
+                        <li><a href="#faq" class="hover:text-aplus-400 transition">FAQ</a></li>
+                        <li><a href="#contato" class="hover:text-aplus-400 transition">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-4">Contato</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-map-marker-alt text-aplus-400 mt-1"></i>
+                            <span>Rua Santo Agostinho, 167 – Sala 02</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-aplus-400"></i>
+                            <span>(17) 3121-6685</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fab fa-whatsapp text-aplus-400"></i>
+                            <span>(17) 99751-3177</span>
+                        </li>
+                    </ul>
+                    <div class="flex gap-3 mt-4">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-aplus-600 flex items-center justify-center transition" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-aplus-600 flex items-center justify-center transition" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/5517997513177" target="_blank" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-aplus-600 flex items-center justify-center transition" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6 text-center text-xs text-gray-500">
+                <p>&copy; <span id="year"></span> A+ Clínicas. Todos os direitos reservados. · Feito com <i class="fas fa-heart text-aplus-500"></i> em São José do Rio Preto.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp float -->
+    <a href="https://wa.me/5517997513177?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20A%2B%20Cl%C3%ADnicas." 
+       target="_blank" rel="noopener"
+       class="whatsapp-float fixed bottom-6 right-6 z-40 w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110"
+       aria-label="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Ano dinâmico no footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('i');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+        });
+
+        // Header scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.className = 'fas fa-bars';
+                }
+            });
+        });
+
+        // Reveal on scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Accordion FAQ
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            const btn = item.querySelector('button');
+            const content = item.querySelector('.accordion-content');
+            
+            btn.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                
+                // Fecha todos
+                document.querySelectorAll('.accordion-item').forEach(other => {
+                    other.classList.remove('open');
+                    other.querySelector('.accordion-content').classList.remove('open');
+                    other.querySelector('button').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Abre o clicado se estava fechado
+                if (!isOpen) {
+                    item.classList.add('open');
+                    content.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Formulário → WhatsApp
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const servico = document.getElementById('servico').value;
+            const mensagem = document.getElementById('mensagem').value.trim();
+
+            const texto = `Olá! Meu nome é *${nome}*.\n\n` +
+                          `📞 Telefone: ${telefone}\n` +
+                          `🩺 Serviço de interesse: *${servico}*\n` +
+                          (mensagem ? `\n💬 Mensagem: ${mensagem}\n` : '') +
+                          `\n_Gostaria de agendar uma consulta na A+ Clínicas._`;
+
+            const url = `https://wa.me/5517997513177?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
